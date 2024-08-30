@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header') %>
+        <title>BLOG-HUB</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+        <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <%- include('./partials/navbar') %>
+
+        <div class="container dasboard">
+            <h1 class="mb-3 mt-3">Dashboard</h1>
+
+            <h2 class="mb-3 mt-3">All Users</h2>
+            <table class="table ">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% blogs.forEach(blog=> { %>
+                        <tr>
+                            <td>
+                                <%= blog.title %>
+                            </td>
+                            <td>
+                                <%= blog.author ? blog.author.username : 'Unknown Author' %>
+                            </td>
+                            <td>
+                                <a href="/admin/edit/<%= blog._id %>" class="btn btn-primary">Edit</a>
+                                <a href="/admin/delete/<%= blog._id %>" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+
+        </div>
+
+        <%- include('./partials/footer') %>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header') %>
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+        <link rel="stylesheet" href="/css/style.css">
+        <title>BLOG-HUB</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">BLOG-HUB</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown"
+                style="display: flex; justify-content: end; gap: 30px;">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/blog">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/blog/addblog">ADD BLOG</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/blog/myposts">MY POSTS</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/logout">LOG OUT</a></li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container ">
+        <div class="card add_card" style="width: 70%">
+            <div class="card-body">
+                <form action="/blog" method="POST">
+
+                    <div class="form-group mb-3 mt-5">
+                        <label for="title">TITLE</label>
+                        <input type="title" class="form-control" id="title" name="title">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="body">CONTENT</label>
+                        <textarea class="form-control" id="content" rows="3" name="content"></textarea>
+                    </div>
+                    <button class="btn btn-primary">create</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <%- include('./partials/footer') %>
+</body>
+
+</html>

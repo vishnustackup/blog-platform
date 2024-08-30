@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header') %>
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+        <title>BLOG-HUB</title>
+</head>
+
+<body>
+    <div class="container ">
+        <form action="/blog/update/<%= blog._id %>" method="POST">
+
+            <div class="form-group mb-3 mt-5">
+                <label for="title">title</label>
+                <input type="text" class="form-control" id="title" name="title" value="<%= blog.title %>">
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="body">content</label>
+                <textarea class="form-control" id="content" rows="3" name="content"><%= blog.content %></textarea>
+
+            </div>
+            <button class="btn btn-primary">UPDATE</button>
+        </form>
+    </div>
+
+    <%- include('./partials/footer') %>
+</body>
+
+</html>
